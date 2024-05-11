@@ -9,3 +9,10 @@ Currently, two official plugins are available:
 
 <!-- run command -->
 npm run dev
+
+<!-- To install TailwindCss -->
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+<!-- Navigation -->
+npm i react-router-dom

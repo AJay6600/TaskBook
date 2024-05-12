@@ -7,6 +7,7 @@ import TaskForm from "../components/common/TaskForm";
 const Home = () => {
   const { tasks, dispatch } = useTasksContext();
   const { user } = useAuthContext();
+  const [data,setData] = useState();
 
   useEffect(() => {
     const fetchTask = async () => {
@@ -15,6 +16,10 @@ const Home = () => {
           Authorization: `Bearer ${user.token}`,
         },
       });
+
+      setData(response);
+
+      console.log("Response ",data)
       // const responseClone= await response
       const jason = await response.json();
       console.log(jason);
@@ -32,10 +37,10 @@ const Home = () => {
   return (
     <div className=" w-10/12 mx-auto mt-10">
       <p className="text-4xl font-bold mb-8 text-caribbeangreen-500">Tasks</p>
-
-      <div className=" flex  justify-between ml-2 ">
+        
+      <div className="  ml-2 flex lg:justify-between flex-col sm: gap-14 lg:flex-row ">
         {/* leftpart */}
-        <div className="w-[650px]">
+        <div className=" w-[300px] md:w-[500px] lg:w-[650px] ">
           {tasks &&
             tasks.map((task) => {
               return <TaskDetails key={task._id} task={task} />;
@@ -45,6 +50,8 @@ const Home = () => {
         {/* rightPart */}
         <TaskForm />
       </div>
+
+
     </div>
   );
 };

@@ -25,9 +25,9 @@ const SignUp = () => {
       <div className=" w-[500px] mt-14 border rounded-lg p-4  border-pure-greys-50 shadow-xl">
         <h1 className="m-2 p-2 font-bold text-4xl mb-4">Signed Up Yourself</h1>
         <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
-          <div className="flex flex-row gap-4 m-2 p-2">
+          <div className="flex flex-col lg:flex-row gap-4 m-2 p-2 ">
             <label>
-              First Name
+              First Name 
               <input
                 type="text"
                 id="name"
@@ -35,7 +35,7 @@ const SignUp = () => {
                 onChange={(e) => {
                   setFirstName(e.target.value);
                 }}
-                className="border  h-[35px] p-2 rounded-md border-black"
+                className="border  h-[35px] p-2 rounded-md border-black ml-2 lg:ml-0"
               />
             </label>
             <label>
@@ -44,7 +44,7 @@ const SignUp = () => {
                 type="text"
                 id="name"
                 placeholder="Enter your name"
-                className="border  h-[35px] p-2 rounded-md border-black"
+                className="border  h-[35px] p-2 rounded-md border-black ml-2 lg:ml-0"
                 onChange={(e) => {
                   setLastName(e.target.value);
                 }}
@@ -65,14 +65,14 @@ const SignUp = () => {
             />
           </label>
 
-          <div className="flex flex-row gap-4 m-2 p-2">
+          <div className="flex  flex-col lg:flex-row gap-4 m-2 p-2">
             <label>
               Create Password
               <input
                 type="password"
                 id="password"
                 placeholder="Enter password"
-                className="border  h-[35px] p-2 rounded-md border-black"
+                className="border  h-[35px] p-2 rounded-md border-black ml-2 lg:ml-0"
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
@@ -85,7 +85,7 @@ const SignUp = () => {
                 type="password"
                 id="confirmPassword"
                 placeholder="Enter password"
-                className="border  h-[35px] p-2 rounded-md border-black"
+                className="border  h-[35px] p-2 rounded-md border-black ml-2 lg:ml-0"
                 onChange={(e) => {
                   SetConfirmPassword(e.target.value);
                 }}

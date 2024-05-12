@@ -27,11 +27,12 @@ const Navbar = () => {
 
   return (
     <div
-      className=" flex justify-between"
+      className=" flex flex-col sm:flex-row justify-between"
       style={{ borderBottom: ".5px solid #72727234" }}
     >
       <div className="flex flex-row gap-3 items-center m-2 ">
         <img src={logo} width="80px" height={40} />
+        <p className=" text-2xl font-bold text-pure-greys-700">Task Manager</p>
       </div>
 
       <div className="mt-4">

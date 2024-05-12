@@ -3,6 +3,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const cors = require("cors");
 const user = require("./routers/users");
+const task = require("./routers/task");
 // initialize the app
 app = express();
 app.use(cors());
@@ -16,6 +17,7 @@ app.use((req, res, next) => {
 // routes
 // app.use('/api/workout',WorkoutRouter)
 app.use("/api/user", user);
+app.use("/api/tasks", task);
 // Mangoose connet
 // app listening on
 mongoose

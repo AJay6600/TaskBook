@@ -1,9 +1,49 @@
+import React, { useEffect, useState } from "react";
+import { useTasksContext } from "../hook/useTaskContext";
+import { useAuthContext } from "../hook/useAuthContext";
+import TaskDetails from "../components/common/TaskDetails";
+import TaskForm from "../components/common/TaskForm";
+
 const Home = () => {
+  const { tasks, dispatch } = useTasksContext();
+  const { user } = useAuthContext();
+
+  useEffect(() => {
+    const fetchTask = async () => {
+      const response = await fetch("http://127.0.0.1:4000/api/tasks", {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
+      // const responseClone= await response
+      const jason = await response.json();
+      console.log(jason);
+
+      if (response.ok) {
+        dispatch({ type: "SET_TASKS", payload: jason });
+      }
+    };
+
+    if (user) {
+      fetchTask();
+    }
+  }, [dispatch, user, tasks]);
+
   return (
-    <div className="">
-      {/* navbar */}
-      <div className="border border-b-gray-300 border-t-gray-300">
-        <h1>Home</h1>
+    <div className=" w-10/12 mx-auto mt-10">
+      <p className="text-4xl font-bold mb-8 text-caribbeangreen-500">Tasks</p>
+
+      <div className=" flex  justify-between ml-2 ">
+        {/* leftpart */}
+        <div className="w-[650px]">
+          {tasks &&
+            tasks.map((task) => {
+              return <TaskDetails key={task._id} task={task} />;
+            })}
+        </div>
+
+        {/* rightPart */}
+        <TaskForm />
       </div>
     </div>
   );

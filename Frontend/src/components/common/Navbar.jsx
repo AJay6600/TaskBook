@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import logo from "../../assets/logo2.png";
+import logo from "../../assets/task.png";
 import { useNavigate, useNavigation } from "react-router-dom";
 import { useAuthContext } from "../../hook/useAuthContext";
 import { useLogout } from "../../hook/useLogout";
@@ -26,12 +26,12 @@ const Navbar = () => {
   };
 
   return (
-    <div className=" flex justify-between">
+    <div
+      className=" flex justify-between"
+      style={{ borderBottom: ".5px solid #72727234" }}
+    >
       <div className="flex flex-row gap-3 items-center m-2 ">
-        <img src={logo} width={100} height={40} />
-        <h1 className=' text-3xl font-bold text-gray-800 text-richblue-600'>
-              Task Manager
-          </h1>
+        <img src={logo} width="80px" height={40} />
       </div>
 
       <div className="mt-4">

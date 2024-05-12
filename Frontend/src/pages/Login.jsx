@@ -12,7 +12,7 @@ const Login = () => {
   };
   return (
     <div className=" w-10/12 mx-auto flex items-center justify-center">
-      <div className=" w-[400px] mt-14">
+      <div className=" w-[400px] mt-14 border rounded-lg p-4  border-pure-greys-50 shadow-xl">
         <h1 className="m-2 p-2 font-bold text-4xl mb-4">Logged In Yourself</h1>
         <form onSubmit={handleSubmit}>
           <label className="flex flex-col gap-1 m-2 p-2">
@@ -43,12 +43,12 @@ const Login = () => {
           <div className=" m-2 p-2">
             <button
               type="submit"
-              className=" border border-black w-full rounded-md p-1 font-semibold bg-yellow-300"
+              className=" border border-black w-full rounded-md p-1 font-semibold bg-yellow-50"
               disabled={isLoading}
             >
               Login
             </button>
-            {error && <div className="error">{error}</div>}
+            {error && <div className="error text-pink-400 p-1">* {error} *</div>}
           </div>
         </form>
       </div>

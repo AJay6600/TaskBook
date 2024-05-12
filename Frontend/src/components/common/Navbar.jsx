@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import logo from "../../assets/logo1.jpg";
+import logo from "../../assets/logo2.png";
 import { useNavigate, useNavigation } from "react-router-dom";
 import { useAuthContext } from "../../hook/useAuthContext";
 import { useLogout } from "../../hook/useLogout";
@@ -8,7 +8,7 @@ import { useLogout } from "../../hook/useLogout";
 const Navbar = () => {
   const { user } = useAuthContext();
   const { logout } = useLogout();
-  const [flag, setFlag] = useState(true);
+  const [flag, setFlag] = useState(false);
 
   const navigate = useNavigate();
   const setClicked = () => {
@@ -29,7 +29,9 @@ const Navbar = () => {
     <div className=" flex justify-between">
       <div className="flex flex-row gap-3 items-center m-2 ">
         <img src={logo} width={100} height={40} />
-        <h1 className=" text-xl font-bold text-gray-800">Fitness Hub</h1>
+        <h1 className=' text-3xl font-bold text-gray-800 text-richblue-600'>
+              Task Manager
+          </h1>
       </div>
 
       <div className="mt-4">

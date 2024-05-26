@@ -23,7 +23,7 @@ const UpdateDialog = ({ openDialog, setOpenDialog, task }) => {
 
   const hanldeUpdate = async () => {
     const response = await fetch(
-      "http://127.0.0.1:4000/api/tasks/" + task._id,
+      "https://taskbook-e1xb.onrender.com/api/tasks/" + task._id,
       {
         method: "PUT",
         headers: {

@@ -20,14 +20,17 @@ function TaskForm() {
 
     const task = { title, description, isCompleted };
 
-    const response = await fetch("http://127.0.0.1:4000/api/tasks", {
-      method: "POST",
-      body: JSON.stringify(task),
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${user.token}`,
-      },
-    });
+    const response = await fetch(
+      "https://taskbook-e1xb.onrender.com/api/tasks",
+      {
+        method: "POST",
+        body: JSON.stringify(task),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user.token}`,
+        },
+      }
+    );
     const json = await response.json();
 
     if (!response.ok) {

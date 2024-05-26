@@ -10,11 +10,14 @@ const Home = () => {
 
   useEffect(() => {
     const fetchTask = async () => {
-      const response = await fetch("http://127.0.0.1:4000/api/tasks", {
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      });
+      const response = await fetch(
+        "https://taskbook-e1xb.onrender.com/api/tasks",
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
       // const responseClone= await response
       const jason = await response.json();
       console.log(jason);

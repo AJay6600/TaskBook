@@ -49,10 +49,11 @@ function TaskDetails({ task }) {
         <div>
           <p className="font-bold text-2xl text-blue-200">{task.title}</p>
           <p className="mt-2">{task.description}</p>
-          <p>
+          <p className=" text-xs">(
             {formatDistanceToNow(new Date(task.createdAt), {
               addSuffix: true,
             })}
+          )
           </p>
         </div>
         <div className="flex flex-row gap-4">
